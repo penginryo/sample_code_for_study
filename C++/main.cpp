@@ -44,6 +44,9 @@ public:
             tagName.erase(tagName.begin());
             if ((_stack.top()) == tagName) {    // check if top of stack is the same as input
             _stack.pop();
+            } else {
+                cout << "Your html file has tag error" << endl;
+                exit(0);
             }
         } else {                // if OPENING TAG
             _stack.push(tagName);
@@ -69,7 +72,7 @@ int main() {
         end = input.stackMan();
     }
 
-    cout << "Stack cleared" << endl;
+    cout << "Stack cleared, successfully finished" << endl;
 
     return 0;
 }
