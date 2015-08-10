@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Calculator</title>
+	<style>
+
+		body {
+			font-family: Arial;
+			font-size: 1.0em;
+		}
+		input#box {
+			width: 50px;
+			height: 20px;
+			font-size: 0.8em;
+		}
+		input.button {
+			margin: 5px 0;
+			padding: 5px 10px;
+    		font-size: 1.0em;
+		}
+	</style>
+</head>
+<body>
+		<form name='calc' method='POST' action='calculator.php'>
+				First Value  : <input id='box' name='input1' type='text'><br>
+				
+				<select name="operation">
+					<option name="add">+</option>
+					<option name="sub">-</option>
+					<option name="mul">*</option>
+					<option name="div">/</option>
+				</select><br>
+				
+				Second Value : <input id='box' name='input2' type='text'><br>
+				<input class="button" type="submit" value="calculate"><br>
+				Answer : <input id="box" type="text" name="result" value="">
+		</form> 
+</body>
+</html>
