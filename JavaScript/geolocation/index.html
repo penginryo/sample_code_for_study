@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body onload="getLocation()">
+	<p id="demo"></p>
+
+	<script>
+		var display = document.getElementById("demo");
+		function getLocation() {
+			if (navigator.geolocation) {
+				navigator.geolocation.getCurrentPosition(showPosition);
+			} else {
+					display.innerHTML = "Geolocation is not supported by this browser.";
+				}
+		}
+		function showPosition(position) {
+			display.innerHTML = "<p>Latitude: " + position.coords.latitude +
+				"<br>Longitude: " + position.coords.longitude + "</p>";
+
+			var latitude = position.coords.latitude;
+			var longitude = position.coords.longitude;
+
+			var img = new Image();
+			img.src = "https://maps.googleapis.com/maps/api/staticmap?center=" + latitude + "," + longitude + "&zoom=13&size=300x300&sensor=false";
+			display.appendChild(img);
+		}
+	</script>
+</body>
+</html>
