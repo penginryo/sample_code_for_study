@@ -7,6 +7,7 @@ opts = {
 	depth_limit: 0
 }
 
+# put url below
 url = ''
 
 Anemone.crawl(url, opts) do |anemone|
@@ -15,9 +16,7 @@ Anemone.crawl(url, opts) do |anemone|
 
 			img_path = node['src'].to_s
 
-			if !img_path.include? 'http'
-				img_path = url + img_path
-			end
+			img_path = url + img_path unless img_path.include? 'http'
 			
 			file_name = File.basename(img_path)
 			dir_name = "/var/tmp/hogege/"
