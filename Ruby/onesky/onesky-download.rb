@@ -40,7 +40,7 @@ for current_locale in 0...locale.size do
     end
 
     # start downloading selected locale files, if already exists then overrites them
-    File.open(dl_file_name, 'a') do |file|
+    File.open(dl_file_name, 'w') do |file|
       file.write(resp);
       puts "Downloaded #{dl_file_name}"
       dl_file_name = ""
